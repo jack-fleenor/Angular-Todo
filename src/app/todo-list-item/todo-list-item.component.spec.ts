@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { TodoListItemComponent } from './todo-list-item.component';
 
 describe('TodoListItemComponent', () => {
@@ -8,10 +7,9 @@ describe('TodoListItemComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TodoListItemComponent]
-    })
-    .compileComponents();
-    
+      imports: [TodoListItemComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(TodoListItemComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -20,5 +18,9 @@ describe('TodoListItemComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  
+
+  it('Should have a placeholder todo item.', () => {
+    const placeholder = component.listItem.getTitle();
+    expect(placeholder).toEqual('Placeholder');
+  });
 });
