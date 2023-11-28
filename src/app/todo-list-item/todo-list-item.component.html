@@ -1,0 +1,18 @@
+<div style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between;">
+  <div>
+    {{ listItem.getTitle() }}
+  </div>
+  <div>
+    <button 
+      type="button" 
+      (click)="listItem.setStatus()"
+      [class]="listItem.getStatus() ? 'activeButton' : 'inactiveButton'"
+    ></button>
+  </div>
+</div>
+<div *ngIf="listItem.getCreatedDateString() === listItem.getModifiedDateString()">
+  Created: {{ listItem.getModifiedDateString() }}
+</div>
+<div *ngIf="listItem.getCreatedDateString() !== listItem.getModifiedDateString()">
+  Modified: {{ listItem.getModifiedDateString() }}
+</div>

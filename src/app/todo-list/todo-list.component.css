@@ -1,0 +1,25 @@
+* {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+label {
+  margin-right: 5px;
+}
+.addTodo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 15px
+}
+
+ul {
+  list-style-type: none;
+  max-height: 750px;
+  overflow: scroll;
+  padding: 0;
+}
+
+li {
+  width: 250px;
+  margin: 15px;
+}

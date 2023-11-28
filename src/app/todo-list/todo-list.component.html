@@ -1,0 +1,19 @@
+<div class="addTodo">
+  <label for="todo">Todo: </label>
+  <input id="todo" type="text" [formControl]="this.listItemText" (keydown)="updateField($event)">
+  <button type="button" (click)="createTodo()">Add</button>
+</div>
+<ul>
+  @if (this.listItems.length === 0) {
+    <li>
+      No todos!
+    </li>
+  }
+  @else {
+    @for (listItem of this.listItems; track listItem.getId()) {
+      <li>
+        <app-todo-list-item [listItem]="listItem"></app-todo-list-item>
+      </li>
+    }
+  }
+</ul>
